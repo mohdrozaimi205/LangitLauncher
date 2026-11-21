@@ -27,7 +27,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -69,12 +71,14 @@ fun AppIconImage(
     colorFilter: ColorFilter?,
     modifier: Modifier = Modifier,
 ) {
-    val bitmap = produceState<ImageBitmap?>(loader.peek(pkg), pkg) {
-        if (value == null) value = withContext(Dispatchers.IO) { loader.load(pkg) }
-    }.value
-    if (bitmap != null) {
+    var bitmap by remember(pkg) { mutableStateOf<ImageBitmap?>(loader.peek(pkg)) }
+    LaunchedEffect(pkg) {
+        if (bitmap == null) bitmap = withContext(Dispatchers.IO) { loader.load(pkg) }
+    }
+    val current = bitmap
+    if (current != null) {
         Image(
-            bitmap = bitmap,
+            bitmap = current,
             contentDescription = null,
             colorFilter = colorFilter,
             modifier = modifier.size(size).clip(SquircleShape),

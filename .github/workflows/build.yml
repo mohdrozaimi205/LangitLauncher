@@ -57,7 +57,7 @@ jobs:
           cp out/*.apk /tmp/
           git checkout --orphan apk-out
           git rm -rf . > /dev/null
-          rm -rf app gradle .github out build.log || true
+          rm -rf app gradle .github .gradle build out build.log || true
           cp /tmp/LangitLauncher-*.apk .
           git add LangitLauncher-*.apk
           git commit -m "APK v1.0.${{ github.run_number }}"
@@ -74,7 +74,7 @@ jobs:
           cp -r app/build/test-results /tmp/logs/ 2>/dev/null || true
           git checkout --orphan ci-logs
           git rm -rf . > /dev/null
-          rm -rf app gradle .github || true
+          rm -rf app gradle .github .gradle build || true
           cp -r /tmp/logs/* .
           git add -A
           git commit -m "Log ralat run ${{ github.run_number }}"

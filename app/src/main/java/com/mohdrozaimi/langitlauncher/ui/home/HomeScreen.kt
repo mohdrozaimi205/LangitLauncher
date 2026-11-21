@@ -34,7 +34,6 @@ import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
@@ -143,11 +142,12 @@ fun HomeScreen(vm: HomeViewModel) {
         IconStyle.TINTED -> 0.3f
     }
 
-    val wallpaperImage = produceState<ImageBitmap?>(null, settings.wallpaperPath, rootSize) {
+    var wallpaperImage by remember { mutableStateOf<ImageBitmap?>(null) }
+    LaunchedEffect(settings.wallpaperPath, rootSize) {
         val path = settings.wallpaperPath
-        value = if (path == null || rootSize.width == 0) null
+        wallpaperImage = if (path == null || rootSize.width == 0) null
         else withContext(Dispatchers.IO) { decodeWallpaper(path, rootSize.width, rootSize.height) }
-    }.value
+    }
 
     val homeCount = max(state.pages.size, 1) + if (editMode) 1 else 0
     val pager = rememberPagerState { homeCount + 1 }
