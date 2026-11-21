@@ -1,0 +1,129 @@
+Downloading https://services.gradle.org/distributions/gradle-8.9-bin.zip
+............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 8.9!
+
+Here are the highlights of this release:
+ - Enhanced Error and Warning Messages
+ - IDE Integration Improvements
+ - Daemon JVM Information
+
+For more details see https://docs.gradle.org/8.9/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:javaPreCompileDebug
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:generateDebugAndroidTestResValues
+> Task :app:extractProguardFiles
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:javaPreCompileDebugUnitTest
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:processDebugResources
+> Task :app:checkDebugDuplicateClasses
+> Task :app:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:compileDebugUnitTestKotlin
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugJavaRes
+> Task :app:processDebugUnitTestJavaRes
+> Task :app:testDebugUnitTest
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics
+> Task :app:mergeDebugJavaResource
+> Task :app:mergeLibDexDebug
+> Task :app:mergeProjectDexDebug
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so.
+
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:lintAnalyzeDebug
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///home/runner/work/LangitLauncher/LangitLauncher/app/build/reports/lint-results-debug.html
+
+> Task :app:lintDebug FAILED
+Lint found 2 errors, 2 warnings. First failure:
+
+/home/runner/work/LangitLauncher/LangitLauncher/app/src/main/java/com/mohdrozaimi/langitlauncher/ui/components/AppTile.kt:72: Error: produceState calls should assign value inside the producer lambda [ProduceStateDoesNotAssignValue from androidx.compose.runtime]
+    val bitmap = produceState<ImageBitmap?>(loader.peek(pkg), pkg) {
+                 ~~~~~~~~~~~~
+
+The full lint text report is located at:
+  /home/runner/work/LangitLauncher/LangitLauncher/app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
+
+> Task :app:copyDebugLintReports
+Copying lint text report to /home/runner/work/LangitLauncher/LangitLauncher/app/build/reports/lint.txt
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/build-1795248619734.json
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lintDebug'.
+> Lint found errors in the project; aborting build.
+  
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+  
+  Lint found 2 errors, 2 warnings. First failure:
+  
+  /home/runner/work/LangitLauncher/LangitLauncher/app/src/main/java/com/mohdrozaimi/langitlauncher/ui/components/AppTile.kt:72: Error: produceState calls should assign value inside the producer lambda [ProduceStateDoesNotAssignValue from androidx.compose.runtime]
+      val bitmap = produceState<ImageBitmap?>(loader.peek(pkg), pkg) {
+                   ~~~~~~~~~~~~
+  
+  The full lint text report is located at:
+    /home/runner/work/LangitLauncher/LangitLauncher/app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 3m 1s
+52 actionable tasks: 52 executed

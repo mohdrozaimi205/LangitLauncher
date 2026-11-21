@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-11-21T08:12:42" hostname="runnervm0hi8g" time="0.059">
+  <properties/>
+  <testcase name="moveFromDockToPageAndToNewPage" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.018"/>
+  <testcase name="newAppAppendsToLastPage" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.001"/>
+  <testcase name="moveReordersWithinPage" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.0"/>
+  <testcase name="hideAndUnhide" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.0"/>
+  <testcase name="moveToFullDockIsRefused" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.0"/>
+  <testcase name="firstSyncFillsDockFromDefaultsAndRestToPage" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.001"/>
+  <testcase name="uninstalledAppRemovedFromPagesAndDockAndEmptyPageDropped" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.0"/>
+  <testcase name="movingIntoFullFirstPagePushesOverflow" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.015"/>
+  <testcase name="overflowGoesToSecondPage" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.008"/>
+  <testcase name="hiddenAppIsNotReAdded" classname="com.mohdrozaimi.langitlauncher.domain.LayoutReducerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,49 @@
+/home/runner/work/LangitLauncher/LangitLauncher/app/src/main/AndroidManifest.xml:45: Warning: Expecting android:resizeableActivity="true" for this activity so the user can take advantage of the multi-window environment on all devices. NOTE: beginning with Android 12, all apps run in multi-window mode on large screen devices. [NonResizeableActivity]
+            android:resizeableActivity="false"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NonResizeableActivity":
+   The <activity> element should be allowed to be resized to allow users to
+   take advantage of the multi-window environments available on larger screen
+   Android devices.
+
+   To fix the issue, consider declaring the corresponding activity element
+   with resizableActivity="true" attribute.
+
+   https://developer.android.com/topic/arc/window-management
+
+/home/runner/work/LangitLauncher/LangitLauncher/app/src/main/java/com/mohdrozaimi/langitlauncher/ui/components/AppTile.kt:72: Error: produceState calls should assign value inside the producer lambda [ProduceStateDoesNotAssignValue from androidx.compose.runtime]
+    val bitmap = produceState<ImageBitmap?>(loader.peek(pkg), pkg) {
+                 ~~~~~~~~~~~~
+/home/runner/work/LangitLauncher/LangitLauncher/app/src/main/java/com/mohdrozaimi/langitlauncher/ui/home/HomeScreen.kt:146: Error: produceState calls should assign value inside the producer lambda [ProduceStateDoesNotAssignValue from androidx.compose.runtime]
+    val wallpaperImage = produceState<ImageBitmap?>(null, settings.wallpaperPath, rootSize) {
+                         ~~~~~~~~~~~~
+
+   Explanation for issues of type "ProduceStateDoesNotAssignValue":
+   produceState returns an observable State using values assigned inside the
+   producer lambda. If the lambda never assigns (i.e value = foo), then the
+   State will never change. Make sure to assign a value when the source you
+   are producing values from changes / emits a new value. For sample usage see
+   the produceState documentation.
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.runtime
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+/home/runner/work/LangitLauncher/LangitLauncher/app/src/main/res/mipmap-anydpi/ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+2 errors, 2 warnings

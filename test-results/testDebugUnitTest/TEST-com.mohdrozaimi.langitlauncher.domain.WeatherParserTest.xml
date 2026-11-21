@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mohdrozaimi.langitlauncher.domain.WeatherParserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-21T08:12:42" hostname="runnervm0hi8g" time="0.142">
+  <properties/>
+  <testcase name="parsesAndRounds" classname="com.mohdrozaimi.langitlauncher.domain.WeatherParserTest" time="0.123"/>
+  <testcase name="unavailableShowsDashes" classname="com.mohdrozaimi.langitlauncher.domain.WeatherParserTest" time="0.016"/>
+  <testcase name="labels" classname="com.mohdrozaimi.langitlauncher.domain.WeatherParserTest" time="0.0"/>
+  <testcase name="brokenJsonGivesNull" classname="com.mohdrozaimi.langitlauncher.domain.WeatherParserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
